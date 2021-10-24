@@ -21,7 +21,7 @@ void evenment::setevenment(evenment e)
     ui->lineEdit_ID->setText(c.get_ID());
 }
 
-
+//test tuto git
 
 
 

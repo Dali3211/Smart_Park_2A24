@@ -35,7 +35,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="tab_2">
      <attribute name="title">
@@ -80,7 +80,7 @@
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;ID&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit_nom">
+     <widget class="QLineEdit" name="lineEdit_NOM">
       <property name="geometry">
        <rect>
         <x>170</x>
@@ -177,7 +177,7 @@
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;Rechercher EV par DATE&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit">
+     <widget class="QLineEdit" name="lineEdit_RECH">
       <property name="geometry">
        <rect>
         <x>250</x>
@@ -190,7 +190,7 @@
        <string/>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit_2">
+     <widget class="QLineEdit" name="lineEdit_MS">
       <property name="geometry">
        <rect>
         <x>250</x>

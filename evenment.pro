@@ -9,12 +9,14 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    connection.cpp \
     evenment.cpp \
     gestion_animation.cpp \
     main.cpp \
     mainwindow.cpp
 
 HEADERS += \
+    connection.h \
     evenment.h \
     gestion_animation.h \
     mainwindow.h

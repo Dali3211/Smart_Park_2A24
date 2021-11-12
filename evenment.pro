@@ -1,4 +1,4 @@
-QT       += core gui
+QT       += core gui sql
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -11,15 +11,19 @@ CONFIG += c++11
 SOURCES += \
     connection.cpp \
     evenment.cpp \
+    exportexcelobject.cpp \
     gestion_animation.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    smtp.cpp
 
 HEADERS += \
     connection.h \
     evenment.h \
+    exportexcelobject.h \
     gestion_animation.h \
-    mainwindow.h
+    mainwindow.h \
+    smtp.h
 
 FORMS += \
     gestion_animation.ui \

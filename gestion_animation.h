@@ -4,7 +4,9 @@
 #include <QSqlError>
 #include <QSqlQuery>
 #include <QDialog>
+#include <QTabWidget>
 #include"evenment.h"
+#include "smtp.h"
 namespace Ui {
 class Gestion_animation;
 }
@@ -17,10 +19,33 @@ public:
     explicit Gestion_animation(QWidget *parent = nullptr);
     ~Gestion_animation();
 private slots:
-     void on_pushButton_valider_clicked() ;
+
+     void on_Valider_clicked();
+
+     void on_tableView_activated(const QModelIndex &index);
+
+     void on_Supprimer_clicked();
+
+     void on_Modifier_clicked();
+
+     void on_TRI_clicked();
+
+     void on_rechEV_clicked();
+
+
+
+     void on_tabWidget_tabBarClicked(int index);
+
+     void on_EXCEL_clicked();
+
+
+    /* void browse();
+     void sendMail();
+     void mailSent(QString);*/
 private:
     Ui::Gestion_animation *ui;
     evenment etmp;
+   // QStringList files;
 };
 
 #endif // GESTION_ANIMATION_H

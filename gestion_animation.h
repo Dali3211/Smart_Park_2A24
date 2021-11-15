@@ -5,6 +5,9 @@
 #include <QSqlQuery>
 #include <QDialog>
 #include <QTabWidget>
+#include <QTimer>
+#include <QTime>
+#include <QMediaPlayer>
 #include"evenment.h"
 #include "smtp.h"
 namespace Ui {
@@ -30,22 +33,43 @@ private slots:
 
      void on_TRI_clicked();
 
-     void on_rechEV_clicked();
+    // void on_rechEV_clicked();
 
 
-
+     //void fill_form(int);
      void on_tabWidget_tabBarClicked(int index);
 
      void on_EXCEL_clicked();
 
 
-    /* void browse();
-     void sendMail();
-     void mailSent(QString);*/
+    void browse();
+     void mailSent(QString);
+
+
+
+     void on_tableView_clicked(const QModelIndex &index);
+
+     void on_browseBtn_clicked();
+
+     void on_sendBtn_clicked();
+
+     void on_rechEV_clicked();
+     void myfunction();
+     void mydate();
+
+
+
+     void on_calendarWidget_clicked(const QDate &date);
+
+
+     void on_TRI_2_clicked();
+
+
 private:
     Ui::Gestion_animation *ui;
     evenment etmp;
-   // QStringList files;
+    QMediaPlayer* player;
+   QStringList files;
 };
 
 #endif // GESTION_ANIMATION_H

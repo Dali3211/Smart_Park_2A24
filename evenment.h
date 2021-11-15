@@ -22,10 +22,13 @@ public:
     QSqlQueryModel * afficher();
     bool supprimer(int);
     bool modifier(int,QString,QString,QString,QString);
-    QSqlQueryModel * rechercher(QString);
+    QSqlQueryModel * rechercherD(QString);
+    QSqlQueryModel * rechercherN(QString);
     QSqlQueryModel * tri();
+    QSqlQueryModel * triN();
+
    QSqlQueryModel *Find_EV();
-  bool rechercherID(int );
+  QSqlQueryModel* rechercherID(int );
 
 
 

@@ -6,11 +6,9 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    Gestion_animation w;
-
-
     connection c;
     bool test=c.createconnection();
+     Gestion_animation w;
     if(test)
     {w.show();
         QMessageBox::information(nullptr, QObject::tr("database is open"),

@@ -53,9 +53,9 @@ QSqlQueryModel * evenment::afficher()
 
     model->setQuery("select * from evenment");
 
-    model->setHeaderData(0, Qt::Horizontal, QObject::tr("NOMEV"));
-    model->setHeaderData(1, Qt::Horizontal, QObject::tr("DATEEV "));
-    model->setHeaderData(2, Qt::Horizontal, QObject::tr("IDEV"));
+    model->setHeaderData(0, Qt::Horizontal, QObject::tr("IDEV"));
+    model->setHeaderData(1, Qt::Horizontal, QObject::tr("NOMEV"));
+    model->setHeaderData(2, Qt::Horizontal, QObject::tr("DATEEV "));
     model->setHeaderData(3, Qt::Horizontal, QObject::tr("HEUREEV "));
     model->setHeaderData(4, Qt::Horizontal, QObject::tr("MAILEV "));
 
@@ -97,8 +97,14 @@ QSqlQueryModel* evenment::tri()
            model->setQuery("SELECT * FROM evenment ORDER BY DATEEV");
            return model;
 }
+QSqlQueryModel* evenment::triN()
+{
+    QSqlQueryModel * model= new QSqlQueryModel();
+           model->setQuery("SELECT * FROM evenment ORDER BY NOMEV");
+           return model;
+}
 
-QSqlQueryModel* evenment::rechercher(QString DATEEV)
+QSqlQueryModel* evenment::rechercherD(QString DATEEV)
 {
     QSqlQueryModel * model= new QSqlQueryModel();
         QString recher="select * from evenment where DATEEV like '%"+DATEEV+"%' ";
@@ -106,13 +112,14 @@ QSqlQueryModel* evenment::rechercher(QString DATEEV)
         return model;
 }
 
-bool evenment::rechercherID(int IDEV)
+
+QSqlQueryModel* evenment::rechercherID(int IDEV)
 {
-    QSqlQuery query;
+    QSqlQueryModel * model= new QSqlQueryModel();
     QString res= QString::number(IDEV);
        QString recher="select * from evenment where IDEV like '%"+res+"%' ";
-
-        return    query.exec();
+       model->setQuery(recher);
+       return model;
 }
 
 
@@ -166,7 +173,8 @@ bool evenment::controlsaisiechar(QString saisi,QString type){
 
 
 }
-bool evenment::controlSaisieNumVide(int num,QString numm){
+bool evenment::controlSaisieNumVide(int num,QString numm)
+{
 
        if(std::to_string(num).length()==8)
                {
@@ -249,7 +257,6 @@ bool evenment::controlsaisieDate(QString date)
            }
 
 }
-
 
 
 

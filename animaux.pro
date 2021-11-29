@@ -1,5 +1,22 @@
-QT       += core gui \
+QT       += core gui sql
     quick
+QT       +=serialport
+
+QT+=sql
+QT       += core gui charts
+QT+=quick
+SOURCES=localisation.cpp \
+    arduino.cpp \
+    calcul.cpp \
+    qrcode.cpp
+QT += svg
+QT       += core gui sql printsupport
+
+
+OTHER_FILES = localisation.qml
+QT +=charts
+
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -21,13 +38,17 @@ SOURCES += \
     animaux.cpp \
     connection.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    notification.cpp
 
 HEADERS += \
     animale.h \
     animaux.h \
+    arduino.h \
     connection.h \
-    mainwindow.h
+    mainwindow.h \
+    notification.h \
+    qrcode.h
 
 FORMS += \
     animaux.ui \
@@ -37,3 +58,36 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+DISTFILES += \
+    calqlatr.qml \
+    content/Button.qml \
+    content/Display.qml \
+    content/NumberPad.qml \
+    content/calculator.js \
+    content/images/paper-edge-left.png \
+    content/images/paper-edge-right.png \
+    content/images/paper-grip.png \
+    localisation.qml
+
+
+TEMPLATE = app
+
+QT += qml quick
+SOURCES += calcul.cpp
+
+RESOURCES += calqlatr.qrc \
+
+
+OTHER_FILES = calqlatr.qml \
+    content/Button.qml \
+    content/Display.qml \
+    content/NumberPad.qml \
+    content/calculator.js \
+    content/images/paper-edge-left.png \
+    content/images/paper-edge-right.png \
+    content/images/paper-grip.png
+
+target.path = $$[QT_INSTALL_EXAMPLES]/quick/demos/calqlatr
+INSTALLS += target
+
